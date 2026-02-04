@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Modern Mycology Theme - Light */
+    --background: 0 0% 99%;
+    --foreground: 0 0% 9%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 9%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 0 0% 9%;
+
+    /* Modern Emerald */
+    --primary: 158 64% 32%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Warm Gold */
+    --secondary: 43 96% 56%;
+    --secondary-foreground: 0 0% 9%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    /* Soft Teal */
+    --accent: 168 50% 90%;
+    --accent-foreground: 0 0% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 158 64% 32%;
+
+    --radius: 1rem;
+
+    /* Custom tokens */
+    --hero-gradient: linear-gradient(135deg, hsl(158 64% 32%) 0%, hsl(168 50% 40%) 50%, hsl(43 96% 56% / 0.2) 100%);
+    --card-gradient: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --glow-primary: 0 25px 50px -12px hsl(158 64% 32% / 0.25);
+    --glow-secondary: 0 25px 50px -12px hsl(43 96% 56% / 0.25);
+
+    /* Modern Typography */
+    --font-display: 'Space Grotesk', system-ui, sans-serif;
+    --font-body: 'DM Sans', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 0 0% 4%;
+    --foreground: 0 0% 96%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 96%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 96%;
+
+    --primary: 158 55% 45%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 43 90% 50%;
+    --secondary-foreground: 0 0% 4%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 168 40% 20%;
+    --accent-foreground: 0 0% 96%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 96%;
+
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 158 55% 45%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+}
+
+@layer components {
+  .text-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, hsl(152 45% 25%) 0%, hsl(152 40% 35%) 50%, hsl(38 80% 45%) 100%);
+  }
+
+  .card-nature {
+    @apply rounded-xl border border-border/50 bg-card p-4 shadow-lg sm:rounded-2xl sm:p-6;
+    background: var(--card-gradient);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .card-nature:hover {
+    @apply shadow-xl;
+    transform: translateY(-4px);
+    box-shadow: var(--glow-green);
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all duration-300 sm:px-8 sm:py-4 sm:text-base;
+  }
+
+  .btn-primary:hover {
+    @apply scale-105;
+    box-shadow: var(--glow-amber);
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-primary bg-transparent px-6 py-3 text-sm font-medium text-primary transition-all duration-300 sm:px-8 sm:py-4 sm:text-base;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-primary text-primary-foreground scale-105;
+  }
+
+  .section-container {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .floating-spore {
+    @apply absolute rounded-full opacity-60;
+    background: radial-gradient(circle, hsl(38 80% 55% / 0.4) 0%, transparent 70%);
+    animation: float 8s ease-in-out infinite;
+  }
+
+  .floating-mushroom {
+    @apply absolute opacity-20;
+    animation: floatMushroom 12s ease-in-out infinite;
+  }
+
+  /* Mobile-specific adjustments */
+  @media (max-width: 640px) {
+    .card-nature {
+      @apply p-3;
+    }
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0) scale(1);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px) scale(1.1);
+    }
+    50% {
+      transform: translateY(-10px) translateX(-5px) scale(0.95);
+    }
+    75% {
+      transform: translateY(-25px) translateX(15px) scale(1.05);
+    }
+  }
+
+  @keyframes floatMushroom {
+    0%, 100% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-30px) rotate(5deg);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px hsl(38 80% 55% / 0.3);
+    }
+    50% {
+      box-shadow: 0 0 40px hsl(38 80% 55% / 0.5);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float 10s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+}
