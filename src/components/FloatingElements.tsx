@@ -2,14 +2,11 @@ import { motion } from 'framer-motion';
 
 export const FloatingElements = () => {
   const spores = [
-    { size: 80, left: '10%', top: '20%', delay: 0 },
-    { size: 60, left: '85%', top: '15%', delay: 1 },
-    { size: 100, left: '75%', top: '60%', delay: 2 },
-    { size: 40, left: '5%', top: '70%', delay: 0.5 },
-    { size: 70, left: '90%', top: '80%', delay: 1.5 },
-    { size: 50, left: '20%', top: '85%', delay: 2.5 },
-    { size: 90, left: '60%', top: '10%', delay: 3 },
-    { size: 45, left: '40%', top: '75%', delay: 0.8 },
+    { size: 60, left: '10%', top: '20%', delay: 0 },
+    { size: 40, left: '85%', top: '15%', delay: 1 },
+    { size: 80, left: '75%', top: '60%', delay: 2 },
+    { size: 30, left: '5%', top: '70%', delay: 0.5 },
+    { size: 50, left: '90%', top: '80%', delay: 1.5 },
   ];
 
   return (
@@ -17,22 +14,23 @@ export const FloatingElements = () => {
       {spores.map((spore, index) => (
         <motion.div
           key={index}
-          className="floating-spore"
+          className="absolute rounded-full opacity-30 bg-primary/20 will-change-transform"
           style={{
             width: spore.size,
             height: spore.size,
             left: spore.left,
             top: spore.top,
+            background: `radial-gradient(circle, hsl(38 80% 55% / 0.4) 0%, transparent 70%)`
           }}
           initial={{ opacity: 0, scale: 0 }}
           animate={{
-            opacity: [0.3, 0.6, 0.3],
-            scale: [1, 1.2, 1],
-            y: [0, -30, 0],
-            x: [0, 15, 0],
+            opacity: [0.2, 0.4, 0.2],
+            scale: [1, 1.1, 1],
+            y: [0, -20, 0],
+            x: [0, 10, 0],
           }}
           transition={{
-            duration: 8 + index * 0.5,
+            duration: 10 + index,
             delay: spore.delay,
             repeat: Infinity,
             ease: 'easeInOut',

@@ -6,7 +6,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 export const CTASection = () => {
   const { t } = useLanguage();
   const { ref, scrollYProgress } = useScrollAnimation();
-  
+
   const y = useParallax(scrollYProgress, 80);
   const scale = useTransform(scrollYProgress, [0, 0.3, 0.7, 1], [0.9, 1, 1, 0.95]);
   const rotate = useTransform(scrollYProgress, [0, 1], [-2, 2]);
@@ -15,7 +15,7 @@ export const CTASection = () => {
     <section id="contact" className="relative overflow-hidden py-16 sm:py-20 md:py-24" ref={ref}>
       {/* Gradient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/90 to-primary/80" />
-      
+
       {/* Parallax decorative elements */}
       <div className="pointer-events-none absolute inset-0">
         <motion.div
@@ -30,9 +30,9 @@ export const CTASection = () => {
           animate={{ scale: [1, 1.3, 1], opacity: [0.3, 0.6, 0.3] }}
           transition={{ duration: 6, repeat: Infinity, delay: 1 }}
         />
-        
+
         {/* Floating spores */}
-        {[...Array(8)].map((_, i) => (
+        {[...Array(4)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute h-2 w-2 rounded-full bg-white/20 sm:h-4 sm:w-4"

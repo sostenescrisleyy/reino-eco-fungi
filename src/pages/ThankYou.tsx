@@ -7,12 +7,12 @@ const ThankYou = () => {
     <div className="min-h-screen bg-gradient-to-b from-background via-background to-muted/30">
       {/* Background decorations */}
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        <motion.div 
+        <motion.div
           className="absolute -left-1/4 top-0 h-[400px] w-[400px] rounded-full bg-primary/5 blur-3xl"
           animate={{ scale: [1, 1.1, 1], opacity: [0.5, 0.7, 0.5] }}
           transition={{ duration: 8, repeat: Infinity }}
         />
-        <motion.div 
+        <motion.div
           className="absolute -right-1/4 bottom-0 h-[350px] w-[350px] rounded-full bg-secondary/10 blur-3xl"
           animate={{ scale: [1, 1.2, 1], opacity: [0.4, 0.6, 0.4] }}
           transition={{ duration: 6, repeat: Infinity, delay: 1 }}
@@ -89,9 +89,9 @@ const ThankYou = () => {
               <BookOpen className="h-5 w-5 text-primary" />
               Próximos Passos
             </h2>
-            
+
             <ul className="space-y-4 text-muted-foreground">
-              <motion.li 
+              <motion.li
                 className="flex items-start gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -100,7 +100,7 @@ const ThankYou = () => {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">1</span>
                 <span>Verifique seu e-mail para acessar o conteúdo do curso na plataforma Kiwify.</span>
               </motion.li>
-              <motion.li 
+              <motion.li
                 className="flex items-start gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -109,7 +109,7 @@ const ThankYou = () => {
                 <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">2</span>
                 <span>Acesse a área de membros e comece seus estudos imediatamente.</span>
               </motion.li>
-              <motion.li 
+              <motion.li
                 className="flex items-start gap-3"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -137,7 +137,7 @@ const ThankYou = () => {
             </a>
             <span className="hidden text-muted-foreground/30 sm:block">|</span>
             <a
-              href="https://wa.me/5500000000000"
+              href="https://wa.me/5562993933972"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-sm text-muted-foreground transition-colors hover:text-primary"

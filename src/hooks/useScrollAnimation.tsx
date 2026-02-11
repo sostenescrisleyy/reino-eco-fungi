@@ -8,16 +8,13 @@ interface ScrollAnimationOptions {
 
 export const useScrollAnimation = (options?: ScrollAnimationOptions) => {
   const ref = useRef<HTMLDivElement>(null);
-  
+
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: options?.offset || ['start end', 'end start'],
   });
 
-  const springConfig = options?.springConfig || { stiffness: 100, damping: 30, mass: 1 };
-  const smoothProgress = useSpring(scrollYProgress, springConfig);
-
-  return { ref, scrollYProgress, smoothProgress };
+  return { ref, scrollYProgress };
 };
 
 export const useParallax = (value: MotionValue<number>, distance: number) => {

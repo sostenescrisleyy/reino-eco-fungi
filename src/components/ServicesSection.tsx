@@ -4,11 +4,11 @@ import { useScrollAnimation, useParallax } from '@/hooks/useScrollAnimation';
 import { Video, GraduationCap, Check, ArrowRight, MessageCircle, ShoppingCart } from 'lucide-react';
 
 // Substitua pelo seu número de WhatsApp
-const WHATSAPP_NUMBER = '5500000000000';
+const WHATSAPP_NUMBER = '5562993933972';
 const WHATSAPP_MESSAGE = encodeURIComponent('Olá! Tenho interesse na consultoria personalizada de cultivo de cogumelos.');
 
 // Substitua pelo seu link de checkout da Kiwify
-const KIWIFY_CHECKOUT_URL = 'https://pay.kiwify.com.br/SEU_LINK_AQUI';
+const KIWIFY_CHECKOUT_URL = 'https://pay.kiwify.com.br/tL5YTX9';
 
 export const ServicesSection = () => {
   const { t } = useLanguage();
@@ -221,12 +221,11 @@ export const ServicesSection = () => {
 
               {/* Preço */}
               <div className="mb-6 rounded-xl bg-muted/50 p-4">
-                <p className="text-sm text-muted-foreground">Investimento:</p>
-                <div className="flex items-baseline gap-2">
-                  <span className="font-display text-3xl font-bold text-foreground">R$ 297</span>
-                  <span className="text-lg text-muted-foreground">,90</span>
+                <p className="text-sm text-muted-foreground mb-1">Investimento:</p>
+                <div className="flex flex-col">
+                  <span className="font-display text-3xl font-bold text-foreground">12x de R$ 30,72</span>
+                  <span className="text-sm text-muted-foreground">ou R$ 297,00 à vista</span>
                 </div>
-                <p className="text-xs text-muted-foreground">ou em até 12x no cartão</p>
               </div>
 
               <motion.a
